@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thenosis · Cross-border advisory for responsible business</title>
+<meta name="description" content="Thenosis is a boutique cross-border advisory firm connecting Latin American businesses with European standards. Our site is under construction: talk to us.">
+<meta name="theme-color" content="#f3f2ec">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Thenosis">
+<meta property="og:title" content="Thenosis · Cross-border advisory for responsible business">
+<meta property="og:description" content="Our site is currently under construction. Talk to us.">
+<meta property="og:image" content="https://www.thenosis.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+  // Idioma antes del primer pintado: ?lang= > elección guardada > idioma del navegador.
+  (function () {
+    var l;
+    try { l = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+    if (l !== 'es' && l !== 'en') { try { l = localStorage.getItem('thenosis-lang'); } catch (e) {} }
+    if (l !== 'es' && l !== 'en') { l = /^es\b/i.test(navigator.language || '') ? 'es' : 'en'; }
+    document.documentElement.lang = l;
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --oceano: #14404f;
+    --oliva: #6e7c4c;
+    --tierra: #c5a06e;
+    --marfil: #f3f2ec;
+    --blanco: #ffffff;
+    --linea: rgba(20, 64, 79, .14);
+    --tenue: rgba(20, 64, 79, .62);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100svh;
+    background: var(--marfil);
+    color: var(--oceano);
+    font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; height: auto; }
+
+  /* Cada texto existe en los dos idiomas; se muestra el del <html lang>. */
+  html[lang="en"] [lang="es"], html[lang="es"] [lang="en"] { display: none !important; }
+
+  .page {
+    flex: 1;
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: clamp(56px, 11vh, 120px) 20px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* — Marca — */
+  .brand { width: min(78vw, 400px); }
+  .brand img { width: 100%; }
+  .tagline {
+    margin: clamp(18px, 3vh, 26px) 0 0;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .28em;
+    line-height: 1.9;
+    text-transform: uppercase;
+  }
+  .tagline span { white-space: nowrap; }
+
+  /* — Selector de idioma — */
+  .lang {
+    margin-top: clamp(28px, 4.5vh, 40px);
+    display: inline-flex;
+    gap: 2px;
+    padding: 3px;
+    border: 1px solid var(--linea);
+    border-radius: 999px;
+  }
+  .lang button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--tenue);
+    font: inherit;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    padding: 7px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color .25s ease, color .25s ease;
+  }
+  .lang button:hover { color: var(--oceano); }
+  .lang button[aria-pressed="true"] { background: var(--oceano); color: var(--marfil); }
+  .lang button:focus-visible, .icon:focus-visible, .chip:focus-visible { outline: 2px solid var(--oliva); outline-offset: 3px; }
+
+  /* — Estado — */
+  .status {
+    margin: clamp(44px, 7vh, 72px) 0 0;
+    max-width: 30em;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .2em;
+    line-height: 1.8;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: var(--oliva);
+  }
+  @media (max-width: 480px) { .status { font-size: 10px; letter-spacing: .14em; } }
+  .dot {
+    display: inline-block;
+    width: 7px; height: 7px;
+    margin: 0 .7em .12em 0;
+    vertical-align: middle;
+    border-radius: 50%;
+    background: var(--tierra);
+    animation: pulso 2.4s ease-in-out infinite;
+  }
+  @keyframes pulso { 50% { opacity: .35; } }
+
+  /* — Contacto — */
+  h1 {
+    margin: 14px 0 0;
+    font-size: clamp(25px, 7vw, 44px);
+    text-wrap: balance;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.1;
+  }
+  h1 em { font-style: normal; color: var(--oliva); }
+
+  .company {
+    margin-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    height: 44px;
+    padding: 0 18px 0 14px;
+    border: 1px solid var(--oceano);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color .25s ease, color .25s ease;
+  }
+  .chip svg { width: 17px; height: 17px; flex: none; }
+  .chip:hover { background: var(--oceano); color: var(--marfil); }
+
+  .people {
+    margin-top: clamp(36px, 6vh, 56px);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  @media (min-width: 720px) { .people { grid-template-columns: 1fr 1fr; gap: 18px; } }
+  /* El orden de las tarjetas sigue la maqueta: en español primero Ariel. */
+  html[lang="es"] .person--ariel { order: -1; }
+
+  .person {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px;
+    background: var(--blanco);
+    border: 1px solid var(--linea);
+    border-radius: 22px;
+    text-align: left;
+  }
+  .person img {
+    width: 84px; height: 84px;
+    border-radius: 50%;
+    flex: none;
+    background: #1d1d1d;
+  }
+  @media (max-width: 359px) { .person { gap: 14px; padding: 16px; } .person img { width: 68px; height: 68px; } .person h2 { font-size: 14.5px; } }
+  @media (min-width: 720px) { .person { padding: 22px; } .person img { width: 96px; height: 96px; } }
+  .person h2 { margin: 0; font-size: 15.5px; font-weight: 700; letter-spacing: -.005em; }
+  .role { margin: 3px 0 0; font-size: 12.5px; font-weight: 500; color: var(--oliva); }
+  .city { margin: 2px 0 0; font-size: 12.5px; color: var(--tenue); }
+  .icons { margin-top: 12px; display: flex; gap: 8px; }
+  .icon {
+    width: 40px; height: 40px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--oceano);
+    border-radius: 50%;
+    transition: background-color .25s ease, color .25s ease;
+  }
+  .icon svg { width: 16px; height: 16px; }
+  .icon:hover { background: var(--oceano); color: var(--marfil); }
+
+  footer {
+    padding: 28px 20px calc(28px + env(safe-area-inset-bottom));
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: .04em;
+    color: var(--tenue);
+  }
+
+  /* — Entrada — */
+  @media (prefers-reduced-motion: no-preference) {
+    .in { animation: entra .9s cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(var(--i, 0) * 90ms + 80ms); }
+    @keyframes entra { from { opacity: 0; transform: translateY(14px); } }
+  }
+  @media (prefers-reduced-motion: reduce) { .dot { animation: none; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-in" viewBox="0 0 24 24"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.75" y="4.75" width="18.5" height="14.5" rx="2.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></g></symbol>
+</svg>
+
+<main class="page">
+  <div class="brand in" style="--i:0">
+    <img src="assets/thenosis-logo.png" width="960" height="526" alt="Thenosis">
+  </div>
+  <p class="tagline in" style="--i:1"><span>Cross-border advisory</span> <span>for responsible business</span></p>
+
+  <div class="lang in" style="--i:2" role="group" aria-label="Language / Idioma">
+    <button type="button" data-set-lang="en" aria-pressed="false">ENGLISH</button>
+    <button type="button" data-set-lang="es" aria-pressed="false">ESPAÑOL</button>
+  </div>
+
+  <p class="status in" style="--i:3"><span class="dot" aria-hidden="true"></span>
+    <span lang="en">Our site is currently under construction</span>
+    <span lang="es">Nuestro sitio está actualmente en construcción</span>
+  </p>
+
+  <h1 class="in" style="--i:4">
+    <span lang="en">Talk to <em>us</em></span>
+    <span lang="es">Conversa con <em>nosotros</em></span>
+  </h1>
+
+  <div class="company in" style="--i:5">
+    <a class="chip" href="https://www.linkedin.com/company/thenosis/" target="_blank" rel="noopener">
+      <svg aria-hidden="true"><use href="#i-in"/></svg>LinkedIn
+    </a>
+    <a class="chip" href="mailto:hello@thenosis.com">
+      <svg aria-hidden="true"><use href="#i-mail"/></svg>hello@thenosis.com
+    </a>
+  </div>
+
+  <div class="people">
+    <article class="person person--mercedes in" style="--i:6">
+      <img src="assets/mercedes.webp" width="144" height="144" alt="Mercedes Baxzos">
+      <div>
+        <h2>Mercedes Baxzos</h2>
+        <p class="role"><span lang="en">Founding partner</span><span lang="es">Socia fundadora</span></p>
+        <p class="city"><span lang="en">Milan · Italy</span><span lang="es">Milán · Italia</span></p>
+        <div class="icons">
+          <a class="icon" href="https://www.linkedin.com/in/mercedes-baxzos/" target="_blank" rel="noopener" aria-label="LinkedIn · Mercedes Baxzos"><svg aria-hidden="true"><use href="#i-in"/></svg></a>
+          <a class="icon" href="https://api.whatsapp.com/send?phone=393517409251" target="_blank" rel="noopener" aria-label="WhatsApp · Mercedes Baxzos"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+          <a class="icon" href="mailto:baxzos@thenosis.com" aria-label="Email · baxzos@thenosis.com"><svg aria-hidden="true"><use href="#i-mail"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="person person--ariel in" style="--i:7">
+      <img src="assets/ariel.webp" width="144" height="144" alt="Ariel Alejandro Sosa">
+      <div>
+        <h2>Ariel Alejandro Sosa</h2>
+        <p class="role"><span lang="en">Founding partner</span><span lang="es">Socio fundador</span></p>
+        <p class="city">Buenos Aires · Argentina</p>
+        <div class="icons">
+          <a class="icon" href="https://www.linkedin.com/in/ariel-alejandro-sosa/" target="_blank" rel="noopener" aria-label="LinkedIn · Ariel Alejandro Sosa"><svg aria-hidden="true"><use href="#i-in"/></svg></a>
+          <a class="icon" href="https://api.whatsapp.com/send?phone=5491162716892" target="_blank" rel="noopener" aria-label="WhatsApp · Ariel Alejandro Sosa"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+          <a class="icon" href="mailto:sosa@thenosis.com" aria-label="Email · sosa@thenosis.com"><svg aria-hidden="true"><use href="#i-mail"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <span lang="en">© 2026 THENOSIS. All rights reserved.</span>
+  <span lang="es">© 2026 THENOSIS. Todos los derechos reservados.</span>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var buttons = document.querySelectorAll('[data-set-lang]');
+    function sync() {
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].setAttribute('aria-pressed', buttons[i].getAttribute('data-set-lang') === root.lang ? 'true' : 'false');
+      }
+    }
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', function () {
+        root.lang = this.getAttribute('data-set-lang');
+        try { localStorage.setItem('thenosis-lang', root.lang); } catch (e) {}
+        sync();
+      });
+    }
+    sync();
+  })();
+</script>
+</body>
+</html>
