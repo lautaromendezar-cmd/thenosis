@@ -113,8 +113,11 @@
 
   /* — Estado — */
   .status {
-    margin: clamp(44px, 7vh, 72px) 0 0;
-    max-width: 30em;
+    margin: clamp(36px, 6vh, 52px) 0 0;
+    width: min(100%, 590px);
+    padding: 10px 24px;
+    border: 1px solid var(--oliva);
+    border-radius: 999px;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: .2em;
@@ -123,7 +126,7 @@
     text-wrap: balance;
     color: var(--oliva);
   }
-  @media (max-width: 480px) { .status { font-size: 10px; letter-spacing: .14em; } }
+  @media (max-width: 480px) { .status { font-size: 10px; letter-spacing: .14em; padding: 9px 18px; } }
   .dot {
     display: inline-block;
     width: 7px; height: 7px;
@@ -136,18 +139,8 @@
   @keyframes pulso { 50% { opacity: .35; } }
 
   /* — Contacto — */
-  h1 {
-    margin: 14px 0 0;
-    font-size: clamp(25px, 7vw, 44px);
-    text-wrap: balance;
-    font-weight: 700;
-    letter-spacing: -.02em;
-    line-height: 1.1;
-  }
-  h1 em { font-style: normal; color: var(--oliva); }
-
   .company {
-    margin-top: 22px;
+    margin-top: clamp(40px, 7vh, 64px);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -247,17 +240,12 @@
     <button type="button" data-set-lang="es" aria-pressed="false">ESPAÑOL</button>
   </div>
 
-  <p class="status in" style="--i:3"><span class="dot" aria-hidden="true"></span>
+  <h1 class="status in" style="--i:3"><span class="dot" aria-hidden="true"></span>
     <span lang="en">Our site is currently under construction</span>
     <span lang="es">Nuestro sitio está actualmente en construcción</span>
-  </p>
-
-  <h1 class="in" style="--i:4">
-    <span lang="en">Talk to <em>us</em></span>
-    <span lang="es">Conversa con <em>nosotros</em></span>
   </h1>
 
-  <div class="company in" style="--i:5">
+  <div class="company in" style="--i:4">
     <a class="chip" href="https://www.linkedin.com/company/thenosis/" target="_blank" rel="noopener">
       <svg aria-hidden="true"><use href="#i-in"/></svg>LinkedIn
     </a>
@@ -267,7 +255,7 @@
   </div>
 
   <div class="people">
-    <article class="person person--mercedes in" style="--i:6">
+    <article class="person person--mercedes in" style="--i:5">
       <img src="assets/mercedes.webp" width="144" height="144" alt="Mercedes Baxzos">
       <div>
         <h2>Mercedes Baxzos</h2>
@@ -281,7 +269,7 @@
       </div>
     </article>
 
-    <article class="person person--ariel in" style="--i:7">
+    <article class="person person--ariel in" style="--i:6">
       <img src="assets/ariel.webp" width="144" height="144" alt="Ariel Alejandro Sosa">
       <div>
         <h2>Ariel Alejandro Sosa</h2>
